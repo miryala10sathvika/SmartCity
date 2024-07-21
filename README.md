@@ -1,21 +1,41 @@
 # Instructions
 ## How to Use the System
+### Setup and Installation
 
-1. **Start CupCarbon**
-   - Open the `smartcitysimulation_V2` folder and select the `.cup` file.
+1. Install Python requirements:
+   ```
+   pip install -r requirements.txt
+   ```
 
-2. **Run the `get.py` File**
-   - Navigate to the `results` folder.
-   - Execute the `get.py` script.
+2. Navigate to the `src` folder and run `get.py`:
+   ```
+   cd src
+   python get.py
+   ```
 
-3. **Start the Simulation in CupCarbon**
+### Running the Simulation
 
-4. **Run the `post.py` File**
-   - Navigate to the `results` folder.
-   - Execute the `post.py` script.
+3. Open CupCarbon project:
+   - Navigate to `src/cupcarbon/smartcitysimulation.cup`
+   - Open the project in CupCarbon
+   - Press "Run Simulation" in CupCarbon to start the simulation
 
-5. **Stop the Simulation**
-   - Stop the simulation when you want.
+   Note: Start the simulation after running `get.py`
+
+### Activating Services
+
+4. To activate all services, run:
+   ```
+   python run_services.py
+   ```
+
+## Subscriptions
+
+5. After starting the simulation, run `post.py`:
+   ```
+   python post.py
+   ```
 
 > **Note:** `OneM2M` should be running on `localhost` along with `MongoDB`.
+
 > ps: You can use `docker compose up` to run the `OneM2M` along with `MongDB`. 

@@ -2,4 +2,4 @@ __pycache__
 *utilization.csv
 *simulation.csv
 *data.db
-SINK_*.txt
+src/cupcarbon/results/*
