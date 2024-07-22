@@ -1,0 +1,10 @@
+List of parameters
+------------------------------------------
+device_type:2
+device_id:10
+device_longitude:50.14563292264938
+device_latitude:26.31351896223868
+device_elevation:0.0
+device_radius:10.0
+device_hide:0
+natural_event_file_name:waterGenerator2.evt
