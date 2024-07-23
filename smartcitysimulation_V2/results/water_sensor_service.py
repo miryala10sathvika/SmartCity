@@ -1,19 +1,17 @@
-from flask import Flask, request, jsonify
+from flask import Blueprint, request, jsonify
 from datetime import datetime
 import psutil
-import atexit
 import sqlite3
 from collections import OrderedDict
 import threading
 import time
 from cachetools import LRUCache
 import csv
-import os
 
-app = Flask(__name__)
+water_sensor_bp = Blueprint('water_sensor', __name__)
 process = psutil.Process()
 
-# recently added configuration
+# Recently added configuration
 RECENT_CACHE_SIZE = 50
 recent_cache = OrderedDict()
 
@@ -34,7 +32,9 @@ def init_db():
     cursor.execute('''CREATE TABLE IF NOT EXISTS watersensordata (
                         _id TEXT PRIMARY KEY,
                         value1 REAL,
-                        value2 REAL
+                        value2 REAL,
+                        location1 TEXT,
+                        location2 TEXT
                       )''')
     conn.commit()
     conn.close()
@@ -50,8 +50,8 @@ def batch_write():
                 try:
                     conn = sqlite3.connect('watersensor_data.db')
                     cursor = conn.cursor()
-                    cursor.executemany('''INSERT OR REPLACE INTO watersensordata (_id, value1, value2)
-                                          VALUES (?, ?, ?)''', batch_data)
+                    cursor.executemany('''INSERT OR REPLACE INTO watersensordata (_id, value1, value2, location1, location2)
+                                          VALUES (?, ?, ?, ?, ?)''', batch_data)
                     conn.commit()
                     conn.close()
                     print(f"Batch write successful: {len(batch_data)} records")
@@ -62,7 +62,7 @@ def batch_write():
 # Start batch write thread
 threading.Thread(target=batch_write, daemon=True).start()
 
-@app.route('/notification', methods=['POST'])
+@water_sensor_bp.route('/notification', methods=['POST'])
 def handle_notification():
     global batch_data 
     try:
@@ -71,10 +71,12 @@ def handle_notification():
         timestamp = data.get('Time')
         sensor1_data = data.get('Sensor1')
         sensor2_data = data.get('Sensor2')
+        sensor1_location = data.get('Sensor1Location')
+        sensor2_location = data.get('Sensor2Location')
 
         if sensor_name and timestamp:
             with batch_lock:
-                batch_data.append((timestamp, sensor1_data, sensor2_data))
+                batch_data.append((timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location))
             print(f"Batching data for {sensor_name} at {timestamp}")
 
             # Store data in cache
@@ -85,7 +87,9 @@ def handle_notification():
                 "Name": sensor_name,
                 "Time": timestamp,
                 "Sensor1": sensor1_data,
-                "Sensor2": sensor2_data
+                "Sensor2": sensor2_data,
+                "Sensor1Location": sensor1_location,
+                "Sensor2Location": sensor2_location
             }
 
             return jsonify({"status": "success", "message": "Data stored successfully"}), 200
@@ -95,7 +99,7 @@ def handle_notification():
         print(f"An error occurred: {e}")
         return jsonify({"status": "error", "message": str(e)}), 500
 
-@app.route('/get_data/<id>', methods=['GET'])
+@water_sensor_bp.route('/get_data/<id>', methods=['GET'])
 def get_data(id):
     global batch_data
     try:
@@ -123,14 +127,16 @@ def fetch_from_sqlite(table_name, id):
     try:
         conn = sqlite3.connect('watersensor_data.db')
         cursor = conn.cursor()
-        cursor.execute(f'''SELECT _id, value1, value2 FROM {table_name} WHERE _id = ?''', (id,))
+        cursor.execute(f'''SELECT _id, value1, value2, location1, location2 FROM {table_name} WHERE _id = ?''', (id,))
         row = cursor.fetchone()
         conn.close()
         if row:
             return {
                 "Time": row[0],
                 "Sensor1": row[1],
-                "Sensor2": row[2]
+                "Sensor2": row[2],
+                "Sensor1Location": row[3],
+                "Sensor2Location": row[4]
             }
         return None
     except Exception as e:
@@ -150,6 +156,4 @@ def log_cpu_utilization():
             csvfile.flush()
             time.sleep(cpu_log_interval - 1)  # Subtract the interval time used by psutil.cpu_percent
 
-if __name__ == "__main__":
-    threading.Thread(target=log_cpu_utilization, daemon=True).start()
-    app.run(host='0.0.0.0', port=8002)
+threading.Thread(target=log_cpu_utilization, daemon=True).start()

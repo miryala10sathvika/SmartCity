@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Blueprint, request, jsonify
 from datetime import datetime
 import psutil
 import csv
@@ -8,7 +8,7 @@ import threading
 import time
 from cachetools import LRUCache
 
-app = Flask(__name__)
+room_sensor_bp = Blueprint('room_sensor', __name__)
 process = psutil.Process()
 
 # Cache configuration
@@ -48,7 +48,7 @@ def batch_writer():
 # Start the batch writer thread
 threading.Thread(target=batch_writer, daemon=True).start()
 
-@app.route('/notification', methods=['POST'])
+@room_sensor_bp.route('/notification', methods=['POST'])
 def handle_notification():
     global batch_data
     try:
@@ -57,6 +57,8 @@ def handle_notification():
         timestamp = data.get('Time')
         sensor1_data = data.get('Sensor1')
         sensor2_data = data.get('Sensor2')
+        sensor1_location = data.get('Sensor1Location')
+        sensor2_location = data.get('Sensor2Location')
 
         if sensor_name and timestamp:
             with batch_lock:
@@ -64,7 +66,9 @@ def handle_notification():
                     "_id": timestamp,  # Use timestamp as the unique identifier
                     "Name": sensor_name,
                     "Sensor1": sensor1_data,
-                    "Sensor2": sensor2_data
+                    "Sensor1Location": sensor1_location,
+                    "Sensor2": sensor2_data,
+                    "Sensor2Location": sensor2_location
                 }))
             # Store data in recent_cache
             recent_cache_key = timestamp
@@ -74,7 +78,9 @@ def handle_notification():
                 "Name": sensor_name,
                 "Time": timestamp,
                 "Sensor1": sensor1_data,
-                "Sensor2": sensor2_data
+                "Sensor1Location": sensor1_location,
+                "Sensor2": sensor2_data,
+                "Sensor2Location": sensor2_location
             }
             return jsonify({"status": "success", "message": "Data added to batch"}), 200
         else:
@@ -83,7 +89,7 @@ def handle_notification():
         print(f"An error occurred: {e}")
         return jsonify({"status": "error", "message": str(e)}), 500
 
-@app.route('/get_data/<id>', methods=['GET'])
+@room_sensor_bp.route('/get_data/<id>', methods=['GET'])
 def get_data(id):
     global failure_count
     try:
@@ -101,20 +107,26 @@ def get_data(id):
             get_data_cache[id] = data
             return jsonify({"status": "success", "data": data}), 200
         else:
-            failure_count += 1
             return jsonify({"status": "error", "message": "Data not found"}), 404
     except Exception as e:
         print(f"An error occurred: {e}")
-        failure_count += 1
         return jsonify({"status": "error", "message": str(e)}), 500
 
 def fetch_from_mongodb(db_name, collection_name, id):
-    """This function fetches the data from the specified MongoDB collection using the provided ID."""
     try:
         db = mongo_client[db_name]
         collection = db[collection_name]
-        data = collection.find_one({'_id': id}, {'_id': 0})
-        return data
+        document = collection.find_one({"_id": id})
+        if document:
+            return {
+                "Name": document['Name'],
+                "Time": document['_id'],
+                "Sensor1": document['Sensor1'],
+                "Sensor1Location": document['Sensor1Location'],
+                "Sensor2": document['Sensor2'],
+                "Sensor2Location": document['Sensor2Location']
+            }
+        return None
     except Exception as e:
         print(f"Error fetching data from MongoDB: {e}")
         return None
@@ -132,7 +144,5 @@ def log_cpu_utilization():
             csvfile.flush()
             time.sleep(cpu_log_interval - 1)  # Subtract the interval time used by psutil.cpu_percent
 
-if __name__ == "__main__":
-    # Start the CPU utilization logging thread
-    threading.Thread(target=log_cpu_utilization, daemon=True).start()
-    app.run(host='0.0.0.0', port=8004)
+# Start the CPU utilization logging thread
+threading.Thread(target=log_cpu_utilization, daemon=True).start()

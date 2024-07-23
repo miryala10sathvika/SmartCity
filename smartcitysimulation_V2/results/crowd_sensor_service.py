@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Blueprint, request, jsonify
 from datetime import datetime
 import psutil
 import csv
@@ -8,7 +8,7 @@ import threading
 import time
 from cachetools import LRUCache
 
-app = Flask(__name__)
+crowd_blueprint = Blueprint('crowd', __name__)
 process = psutil.Process()
 
 # Cache configuration
@@ -48,7 +48,7 @@ def batch_writer():
 # Start the batch writer thread
 threading.Thread(target=batch_writer, daemon=True).start()
 
-@app.route('/notification', methods=['POST'])
+@crowd_blueprint.route('/notification', methods=['POST'])
 def handle_notification():
     global batch_data
     try:
@@ -56,7 +56,9 @@ def handle_notification():
         sensor_name = data.get('Name')
         timestamp = data.get('Time')
         sensor1_data = data.get('Sensor1')
+        sensor1_location = data.get('Sensor1Location')
         sensor2_data = data.get('Sensor2')
+        sensor2_location = data.get('Sensor2Location')
 
         if sensor_name and timestamp:
             with batch_lock:
@@ -64,7 +66,9 @@ def handle_notification():
                     "_id": timestamp,  # Use timestamp as the unique identifier
                     "Name": sensor_name,
                     "Sensor1": sensor1_data,
-                    "Sensor2": sensor2_data
+                    "Sensor1Location": sensor1_location,
+                    "Sensor2": sensor2_data,
+                    "Sensor2Location": sensor2_location
                 }))
             # Store data in recent_cache
             recent_cache_key = timestamp
@@ -74,7 +78,9 @@ def handle_notification():
                 "Name": sensor_name,
                 "Time": timestamp,
                 "Sensor1": sensor1_data,
-                "Sensor2": sensor2_data
+                "Sensor1Location": sensor1_location,
+                "Sensor2": sensor2_data,
+                "Sensor2Location": sensor2_location
             }
             return jsonify({"status": "success", "message": "Data added to batch"}), 200
         else:
@@ -83,7 +89,7 @@ def handle_notification():
         print(f"An error occurred: {e}")
         return jsonify({"status": "error", "message": str(e)}), 500
 
-@app.route('/get_data/<id>', methods=['GET'])
+@crowd_blueprint.route('/get_data/<id>', methods=['GET'])
 def get_data(id):
     global failure_count
     try:
@@ -132,7 +138,5 @@ def log_cpu_utilization():
             csvfile.flush()
             time.sleep(cpu_log_interval - 1)  # Subtract the interval time used by psutil.cpu_percent
 
-if __name__ == "__main__":
-    # Start the CPU utilization logging thread
-    threading.Thread(target=log_cpu_utilization, daemon=True).start()
-    app.run(host='0.0.0.0', port=8005)
+# Start the CPU utilization logging thread
+threading.Thread(target=log_cpu_utilization, daemon=True).start()

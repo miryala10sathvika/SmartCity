@@ -32,11 +32,11 @@ class NotificationHandler(BaseHTTPRequestHandler):
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length)
         # Parse the received data and store it in the queue
-        sensor_name, timestamp, sensor1_data, sensor2_data = parse_sensor_data(post_data.decode())
+        sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location = parse_sensor_data(post_data.decode())
         if sensor_name and timestamp:
             with data_lock:
-                data_queue.append((sensor_name, timestamp, sensor1_data, sensor2_data))
-            send_notification(sensor_name, timestamp, sensor1_data, sensor2_data)
+                data_queue.append((sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location))
+            send_notification(sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location)
         self.send_response(200)
         self.end_headers()
 
@@ -47,7 +47,7 @@ class NotificationHandler(BaseHTTPRequestHandler):
 
 def start_server():
     """This function starts the HTTP server to receive notifications."""
-    server_address = ('', 8000)
+    server_address = ('', 8001)
     httpd = HTTPServer(server_address, NotificationHandler)
     print("Starting server to receive notifications...")
     httpd.serve_forever()
@@ -64,39 +64,43 @@ def parse_sensor_data(data):
             timestamp = sensor_root.findtext('Time')
             sensor1_text = sensor_root.findtext('Sensor1')
             sensor2_text = sensor_root.findtext('Sensor2')
+            sensor1_location = sensor_root.findtext('Sensor1Location')
+            sensor2_location = sensor_root.findtext('Sensor2Location')
             sensor1_data = float(sensor1_text) if sensor1_text else None
             sensor2_data = float(sensor2_text) if sensor2_text else None
-            return sensor_name, timestamp, sensor1_data, sensor2_data
+            return sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location
         else:
             print("No sensor data found in the notification")
-            return None, None, None, None
+            return None, None, None, None, None, None
     except ET.ParseError as e:
         print(f"Error parsing XML data: {e}")
-        return None, None, None, None
+        return None, None, None, None, None, None
     except ValueError as e:
         print(f"Error converting sensor data to float: {e}")
-        return None, None, None, None
+        return None, None, None, None, None, None
 
-def send_notification(sensor_name, timestamp, sensor1_data, sensor2_data):
+def send_notification(sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location):
     """This function sends sensor data to the appropriate service based on sensor name."""
     if sensor_name == "Airsensordata":
-        threading.Thread(target=send_to_sensor_service, args=("http://localhost:8001/notification", sensor_name, timestamp, sensor1_data, sensor2_data)).start()
+        threading.Thread(target=send_to_sensor_service, args=("http://localhost:8000/air/notification", sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location)).start()
     elif sensor_name == "Watersensordata":
-        threading.Thread(target=send_to_sensor_service, args=("http://localhost:8002/notification", sensor_name, timestamp, sensor1_data, sensor2_data)).start()
+        threading.Thread(target=send_to_sensor_service, args=("http://localhost:8000/water/notification", sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location)).start()
     elif sensor_name == "Solarsensordata":
-        threading.Thread(target=send_to_sensor_service, args=("http://localhost:8003/notification", sensor_name, timestamp, sensor1_data, sensor2_data)).start()
+        threading.Thread(target=send_to_sensor_service, args=("http://localhost:8000/solar/notification", sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location)).start()
     elif sensor_name == "RoomMonitoringsensordata":
-        threading.Thread(target=send_to_sensor_service, args=("http://localhost:8004/notification", sensor_name, timestamp, sensor1_data, sensor2_data)).start()
+        threading.Thread(target=send_to_sensor_service, args=("http://localhost:8000/room/notification", sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location)).start()
     elif sensor_name == "CrowdMonitoringsensordata":
-        threading.Thread(target=send_to_sensor_service, args=("http://localhost:8005/notification", sensor_name, timestamp, sensor1_data, sensor2_data)).start()
+        threading.Thread(target=send_to_sensor_service, args=("http://localhost:8000/crowd/notification", sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location)).start()
 
-def send_to_sensor_service(url, sensor_name, timestamp, sensor1_data, sensor2_data):
+def send_to_sensor_service(url, sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location):
     """This function sends sensor data to the specified sensor service."""
     payload = {
         "Name": sensor_name,
         "Time": timestamp,
         "Sensor1": sensor1_data,
-        "Sensor2": sensor2_data
+        "Sensor1Location": sensor1_location,
+        "Sensor2": sensor2_data,
+        "Sensor2Location": sensor2_location
     }
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, data=json.dumps(payload), headers=headers)
@@ -118,8 +122,13 @@ def batch_write_to_mongodb():
             try:
                 requests = [InsertOne({
                     '_id': f"{sensor_name}_{timestamp}",
-                    sensor_name: {'value1': sensor1_data, 'value2': sensor2_data}
-                }) for sensor_name, timestamp, sensor1_data, sensor2_data in batch]
+                    sensor_name: {
+                        'value1': sensor1_data,
+                        'location1': sensor1_location,
+                        'value2': sensor2_data,
+                        'location2': sensor2_location
+                    }
+                }) for sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location in batch]
                 collection.bulk_write(requests)
                 print("Batch write complete.")
             except Exception as e:

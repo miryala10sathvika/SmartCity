@@ -1,5 +1,3 @@
-'''This code is used to post the data to the oneM2M server. It reads the data from the sensor 
-files and sends it to the oneM2M server. It also creates a subscription for notifications.'''
 import time
 import os
 import requests
@@ -14,7 +12,7 @@ def get_last_line(file_path):
         last_line = f.readline().decode()
     return last_line
 
-def post_to_onem2m(sensor_name, timestamp, sensor1_data, sensor2_data):
+def post_to_onem2m(sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location):
     """This function sends sensor data to the oneM2M server."""
     baseurl = "http://127.0.0.1:8080/~/in-cse/in-name/SensorData/data"
     headers = {
@@ -28,7 +26,9 @@ def post_to_onem2m(sensor_name, timestamp, sensor1_data, sensor2_data):
                 &lt;Name&gt;{sensor_name}&lt;/Name&gt;
                 &lt;Time&gt;{timestamp}&lt;/Time&gt;
                 &lt;Sensor1&gt;{sensor1_data}&lt;/Sensor1&gt;
+                &lt;Sensor1Location&gt;{sensor1_location}&lt;/Sensor1Location&gt;
                 &lt;Sensor2&gt;{sensor2_data}&lt;/Sensor2&gt;
+                &lt;Sensor2Location&gt;{sensor2_location}&lt;/Sensor2Location&gt;
             &lt;/SensorData&gt;
         </con>
     </m2m:cin>"""
@@ -64,11 +64,11 @@ def monitor_files(file_paths, sleep_time=1):
     last_modified_times = {file_path: os.path.getmtime(file_path) if os.path.isfile(file_path) else None for file_path in file_paths}
     
     sensor_names = {
-        "SINK_4.txt": "Airsensordata",
-        "SINK_19.txt": "Watersensordata",
-        "SINK_20.txt": "Solarsensordata",
-        "SINK_21.txt": "CrowdMonitoringsensordata",
-        "SINK_22.txt": "RoomMonitoringsensordata"
+        "SINK_4.txt": ("Airsensordata", "room1", "room2"),
+        "SINK_19.txt": ("Watersensordata", "room1", "room2"),
+        "SINK_20.txt": ("Solarsensordata", "room1", "room2"),
+        "SINK_21.txt": ("CrowdMonitoringsensordata", "room1", "room2"),
+        "SINK_22.txt": ("RoomMonitoringsensordata", "room1", "room2")
     }
 
     while True:
@@ -88,9 +88,9 @@ def monitor_files(file_paths, sleep_time=1):
                         data = [float(i) for i in data]
                         sensor1_data = data[1]
                         sensor2_data = data[2]
-                        timestamp = int(data[0]) 
-                        sensor_name = sensor_names.get(os.path.basename(file_path), "UnknownSensor")
-                        post_to_onem2m(sensor_name, timestamp, sensor1_data, sensor2_data)
+                        timestamp = int(data[0])
+                        sensor_name, sensor1_location, sensor2_location = sensor_names.get(os.path.basename(file_path), ("UnknownSensor", "UnknownLocation1", "UnknownLocation2"))
+                        post_to_onem2m(sensor_name, timestamp, sensor1_data, sensor2_data, sensor1_location, sensor2_location)
                     else:
                         print(f"Unexpected data format in file {file_path}: {last_line}")
             time.sleep(sleep_time)
@@ -99,6 +99,6 @@ def monitor_files(file_paths, sleep_time=1):
             # Continue monitoring after exception
 
 if __name__ == "__main__":
-    create_subscription('SensorData', 'http://127.0.0.1:8000/notification')
+    create_subscription('SensorData', 'http://127.0.0.1:8001/notification')
     file_paths = ["SINK_4.txt", "SINK_19.txt", "SINK_20.txt", "SINK_21.txt", "SINK_22.txt"]
     monitor_files(file_paths)
