@@ -3,3 +3,6 @@ __pycache__
 *simulation.csv
 *data.db
 src/cupcarbon/results/*
+!src/cupcarbon/results/.gitkeep
+src/cupcarbon/logs/log.txt
+venv

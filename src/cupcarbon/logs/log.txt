@@ -1,0 +1,1610 @@
+===========================
+Initialization
+======================================================
+START SIMULATION
+======================================================
+
+----------------------------------------------------------------------------
+Time : 0.0
+Min (milliseconds) : 0.0
+S18 Starts the loop section.
+S18 READ SENSOR: S#29#0.0
+S18 Read DATA: S#29#0.0
+S18 is writing the message : "0.0" in its buffer.
+S20 Starts the loop section.
+S20 is waiting for data ...
+S19 Starts the loop section.
+S19 is waiting for data ...
+S21 Starts the loop section.
+S21 is waiting for data ...
+S14 Starts the loop section.
+S14 READ SENSOR: S#24#0.0
+S14 Read DATA: S#24#0.0
+S14 is writing the message : "0.0" in its buffer.
+S22 Starts the loop section.
+S22 is waiting for data ...
+S11 Starts the loop section.
+S11 READ SENSOR: S#26#0.0
+S11 Read DATA: S#26#0.0
+S11 is writing the message : "0.0" in its buffer.
+S16 Starts the loop section.
+S16 READ SENSOR: S#28#0.0
+S16 Read DATA: S#28#0.0
+S16 is writing the message : "0.0" in its buffer.
+S4 Starts the loop section.
+S4 is waiting for data ...
+S13 Starts the loop section.
+S13 READ SENSOR: S#23#0.0
+S13 Read DATA: S#23#0.0
+S13 is writing the message : "0.0" in its buffer.
+S1 Starts the loop section.
+S1 READ SENSOR: S#9#0.0
+S1 Read DATA: S#9#0.0
+S1 is writing the message : "0.0" in its buffer.
+S12 Starts the loop section.
+S12 READ SENSOR: S#25#0.0
+S12 Read DATA: S#25#0.0
+S12 is writing the message : "0.0" in its buffer.
+S17 Starts the loop section.
+S17 READ SENSOR: S#30#0.0
+S17 Read DATA: S#30#0.0
+S17 is writing the message : "0.0" in its buffer.
+S15 Starts the loop section.
+S15 READ SENSOR: S#27#0.0
+S15 Read DATA: S#27#0.0
+S15 is writing the message : "0.0" in its buffer.
+S2 Starts the loop section.
+S2 READ SENSOR: S#10#0.0
+S2 Read DATA: S#10#0.0
+S2 is writing the message : "0.0" in its buffer.
+
+----------------------------------------------------------------------------
+Time : 2.3999999999999996E-20
+Min (milliseconds) : 2.3999999999999996E-20
+S18 is listening to the channel
+S18 the channel is free.
+S18 starts sending the message : "0.0".
+S18 has finished sending the message : "0.0" to the node: 
+S22 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S18 starts delaying for 1000.0 milliseconds
+S14 is listening to the channel
+S14 the channel is free.
+S14 starts sending the message : "0.0".
+S14 has finished sending the message : "0.0" to the node: 
+S19 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S14 starts delaying for 1000.0 milliseconds
+S11 is listening to the channel
+S11 the channel is free.
+S11 starts sending the message : "0.0".
+S11 has finished sending the message : "0.0" to the node: 
+S20 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S11 starts delaying for 1000.0 milliseconds
+S16 is listening to the channel
+S16 the channel is free.
+S16 starts sending the message : "0.0".
+S16 has finished sending the message : "0.0" to the node: 
+S21 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S16 starts delaying for 1000.0 milliseconds
+S13 is listening to the channel
+S13 the channel is free.
+S13 starts sending the message : "0.0".
+S13 has finished sending the message : "0.0" to the node: 
+S19 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S13 starts delaying for 1000.0 milliseconds
+S1 is listening to the channel
+S1 the channel is free.
+S1 starts sending the message : "0.0".
+S1 has finished sending the message : "0.0" to the node: 
+S4 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S1 starts delaying for 1000.0 milliseconds
+S12 is listening to the channel
+S12 the channel is free.
+S12 starts sending the message : "0.0".
+S12 has finished sending the message : "0.0" to the node: 
+S20 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S12 starts delaying for 1000.0 milliseconds
+S17 is listening to the channel
+S17 the channel is free.
+S17 starts sending the message : "0.0".
+S17 has finished sending the message : "0.0" to the node: 
+S22 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S17 starts delaying for 1000.0 milliseconds
+S15 is listening to the channel
+S15 the channel is free.
+S15 starts sending the message : "0.0".
+S15 has finished sending the message : "0.0" to the node: 
+S21 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S15 starts delaying for 1000.0 milliseconds
+S2 is listening to the channel
+S2 the channel is free.
+S2 starts sending the message : "0.0".
+S2 has finished sending the message : "0.0" to the node: 
+S4 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S2 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 0.0053159999999999995
+Min (milliseconds) : 0.0053159999999999995
+S20 is reading from its buffer "0.0" and puts it in x
+S20 Buffer available, exit waiting.
+S20 READ : x = 0.0
+S20 is reading from its buffer "0.0" and puts it in y
+S20 Buffer available, exit waiting.
+S20 READ : y = 0.0
+S20 DATA Creation:0.0#0.0
+S20 GET TIME.
+S20 PRINTFILE [printfile, t, x, y]
+S20 Starts the loop section.
+S20 is waiting for data ...
+S19 is reading from its buffer "0.0" and puts it in x
+S19 Buffer available, exit waiting.
+S19 READ : x = 0.0
+S19 is reading from its buffer "0.0" and puts it in y
+S19 Buffer available, exit waiting.
+S19 READ : y = 0.0
+S19 DATA Creation:0.0#0.0
+S19 GET TIME.
+S19 PRINTFILE [printfile, t, x, y]
+S19 Starts the loop section.
+S19 is waiting for data ...
+S21 is reading from its buffer "0.0" and puts it in x
+S21 Buffer available, exit waiting.
+S21 READ : x = 0.0
+S21 is reading from its buffer "0.0" and puts it in y
+S21 Buffer available, exit waiting.
+S21 READ : y = 0.0
+S21 DATA Creation:0.0#0.0
+S21 GET TIME.
+S21 PRINTFILE [printfile, t, x, y]
+S21 Starts the loop section.
+S21 is waiting for data ...
+S22 is reading from its buffer "0.0" and puts it in x
+S22 Buffer available, exit waiting.
+S22 READ : x = 0.0
+S22 is reading from its buffer "0.0" and puts it in y
+S22 Buffer available, exit waiting.
+S22 READ : y = 0.0
+S22 DATA Creation:0.0#0.0
+S22 GET TIME.
+S22 PRINTFILE [printfile, t, x, y]
+S22 Starts the loop section.
+S22 is waiting for data ...
+S4 is reading from its buffer "0.0" and puts it in x
+S4 Buffer available, exit waiting.
+S4 READ : x = 0.0
+S4 is reading from its buffer "0.0" and puts it in y
+S4 Buffer available, exit waiting.
+S4 READ : y = 0.0
+S4 DATA Creation:0.0#0.0
+S4 GET TIME.
+S4 PRINTFILE [printfile, t, x, y]
+S4 Starts the loop section.
+S4 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 1.0
+Min (milliseconds) : 0.994684
+S18 has finished the delay.
+S14 has finished the delay.
+S11 has finished the delay.
+S16 has finished the delay.
+S13 has finished the delay.
+S1 has finished the delay.
+S12 has finished the delay.
+S17 has finished the delay.
+S15 has finished the delay.
+S2 has finished the delay.
+
+S18 Starts the loop section.
+S18 READ SENSOR: S#29#0.0
+S18 Read DATA: S#29#0.0
+S18 is writing the message : "0.0" in its buffer.
+S14 Starts the loop section.
+S14 READ SENSOR: S#24#0.0
+S14 Read DATA: S#24#0.0
+S14 is writing the message : "0.0" in its buffer.
+S11 Starts the loop section.
+S11 READ SENSOR: S#26#0.0
+S11 Read DATA: S#26#0.0
+S11 is writing the message : "0.0" in its buffer.
+S16 Starts the loop section.
+S16 READ SENSOR: S#28#0.0
+S16 Read DATA: S#28#0.0
+S16 is writing the message : "0.0" in its buffer.
+S13 Starts the loop section.
+S13 READ SENSOR: S#23#0.0
+S13 Read DATA: S#23#0.0
+S13 is writing the message : "0.0" in its buffer.
+S1 Starts the loop section.
+S1 READ SENSOR: S#9#0.0
+S1 Read DATA: S#9#0.0
+S1 is writing the message : "0.0" in its buffer.
+S12 Starts the loop section.
+S12 READ SENSOR: S#25#0.0
+S12 Read DATA: S#25#0.0
+S12 is writing the message : "0.0" in its buffer.
+S17 Starts the loop section.
+S17 READ SENSOR: S#30#0.0
+S17 Read DATA: S#30#0.0
+S17 is writing the message : "0.0" in its buffer.
+S15 Starts the loop section.
+S15 READ SENSOR: S#27#0.0
+S15 Read DATA: S#27#0.0
+S15 is writing the message : "0.0" in its buffer.
+S2 Starts the loop section.
+S2 READ SENSOR: S#10#0.0
+S2 Read DATA: S#10#0.0
+S2 is writing the message : "0.0" in its buffer.
+A25 VALUE GENERATION
+A26 VALUE GENERATION
+A9 VALUE GENERATION
+A10 VALUE GENERATION
+A28 VALUE GENERATION
+A29 VALUE GENERATION
+A23 VALUE GENERATION
+A27 VALUE GENERATION
+A24 VALUE GENERATION
+A30 VALUE GENERATION
+
+----------------------------------------------------------------------------
+Time : 1.0
+Min (milliseconds) : 2.3999999999999996E-20
+S18 is listening to the channel
+S18 the channel is free.
+S18 starts sending the message : "0.0".
+S18 has finished sending the message : "0.0" to the node: 
+S22 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S18 starts delaying for 1000.0 milliseconds
+S14 is listening to the channel
+S14 the channel is free.
+S14 starts sending the message : "0.0".
+S14 has finished sending the message : "0.0" to the node: 
+S19 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S14 starts delaying for 1000.0 milliseconds
+S11 is listening to the channel
+S11 the channel is free.
+S11 starts sending the message : "0.0".
+S11 has finished sending the message : "0.0" to the node: 
+S20 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S11 starts delaying for 1000.0 milliseconds
+S16 is listening to the channel
+S16 the channel is free.
+S16 starts sending the message : "0.0".
+S16 has finished sending the message : "0.0" to the node: 
+S21 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S16 starts delaying for 1000.0 milliseconds
+S13 is listening to the channel
+S13 the channel is free.
+S13 starts sending the message : "0.0".
+S13 has finished sending the message : "0.0" to the node: 
+S19 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S13 starts delaying for 1000.0 milliseconds
+S1 is listening to the channel
+S1 the channel is free.
+S1 starts sending the message : "0.0".
+S1 has finished sending the message : "0.0" to the node: 
+S4 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S1 starts delaying for 1000.0 milliseconds
+S12 is listening to the channel
+S12 the channel is free.
+S12 starts sending the message : "0.0".
+S12 has finished sending the message : "0.0" to the node: 
+S20 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S12 starts delaying for 1000.0 milliseconds
+S17 is listening to the channel
+S17 the channel is free.
+S17 starts sending the message : "0.0".
+S17 has finished sending the message : "0.0" to the node: 
+S22 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S17 starts delaying for 1000.0 milliseconds
+S15 is listening to the channel
+S15 the channel is free.
+S15 starts sending the message : "0.0".
+S15 has finished sending the message : "0.0" to the node: 
+S21 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S15 starts delaying for 1000.0 milliseconds
+S2 is listening to the channel
+S2 the channel is free.
+S2 starts sending the message : "0.0".
+S2 has finished sending the message : "0.0" to the node: 
+S4 (radio: radio1) is receiving the message : "0.0" in its buffer.
+S2 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 1.005316
+Min (milliseconds) : 0.0053159999999999995
+S20 is reading from its buffer "0.0" and puts it in x
+S20 Buffer available, exit waiting.
+S20 READ : x = 0.0
+S20 is reading from its buffer "0.0" and puts it in y
+S20 Buffer available, exit waiting.
+S20 READ : y = 0.0
+S20 DATA Creation:0.0#0.0
+S20 GET TIME.
+S20 PRINTFILE [printfile, t, x, y]
+S20 Starts the loop section.
+S20 is waiting for data ...
+S19 is reading from its buffer "0.0" and puts it in x
+S19 Buffer available, exit waiting.
+S19 READ : x = 0.0
+S19 is reading from its buffer "0.0" and puts it in y
+S19 Buffer available, exit waiting.
+S19 READ : y = 0.0
+S19 DATA Creation:0.0#0.0
+S19 GET TIME.
+S19 PRINTFILE [printfile, t, x, y]
+S19 Starts the loop section.
+S19 is waiting for data ...
+S21 is reading from its buffer "0.0" and puts it in x
+S21 Buffer available, exit waiting.
+S21 READ : x = 0.0
+S21 is reading from its buffer "0.0" and puts it in y
+S21 Buffer available, exit waiting.
+S21 READ : y = 0.0
+S21 DATA Creation:0.0#0.0
+S21 GET TIME.
+S21 PRINTFILE [printfile, t, x, y]
+S21 Starts the loop section.
+S21 is waiting for data ...
+S22 is reading from its buffer "0.0" and puts it in x
+S22 Buffer available, exit waiting.
+S22 READ : x = 0.0
+S22 is reading from its buffer "0.0" and puts it in y
+S22 Buffer available, exit waiting.
+S22 READ : y = 0.0
+S22 DATA Creation:0.0#0.0
+S22 GET TIME.
+S22 PRINTFILE [printfile, t, x, y]
+S22 Starts the loop section.
+S22 is waiting for data ...
+S4 is reading from its buffer "0.0" and puts it in x
+S4 Buffer available, exit waiting.
+S4 READ : x = 0.0
+S4 is reading from its buffer "0.0" and puts it in y
+S4 Buffer available, exit waiting.
+S4 READ : y = 0.0
+S4 DATA Creation:0.0#0.0
+S4 GET TIME.
+S4 PRINTFILE [printfile, t, x, y]
+S4 Starts the loop section.
+S4 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 2.0
+Min (milliseconds) : 0.994684
+S18 has finished the delay.
+S14 has finished the delay.
+S11 has finished the delay.
+S16 has finished the delay.
+S13 has finished the delay.
+S1 has finished the delay.
+S12 has finished the delay.
+S17 has finished the delay.
+S15 has finished the delay.
+S2 has finished the delay.
+
+S18 Starts the loop section.
+S18 READ SENSOR: S#29#22.522102555583295
+S18 Read DATA: S#29#22.522102555583295
+S18 is writing the message : "22.522102555583295" in its buffer.
+S14 Starts the loop section.
+S14 READ SENSOR: S#24#19.028821464639023
+S14 Read DATA: S#24#19.028821464639023
+S14 is writing the message : "19.028821464639023" in its buffer.
+S11 Starts the loop section.
+S11 READ SENSOR: S#26#70.27497069351782
+S11 Read DATA: S#26#70.27497069351782
+S11 is writing the message : "70.27497069351782" in its buffer.
+S16 Starts the loop section.
+S16 READ SENSOR: S#28#32.509834476175115
+S16 Read DATA: S#28#32.509834476175115
+S16 is writing the message : "32.509834476175115" in its buffer.
+S13 Starts the loop section.
+S13 READ SENSOR: S#23#16.75813667942955
+S13 Read DATA: S#23#16.75813667942955
+S13 is writing the message : "16.75813667942955" in its buffer.
+S1 Starts the loop section.
+S1 READ SENSOR: S#9#9.793165502809195
+S1 Read DATA: S#9#9.793165502809195
+S1 is writing the message : "9.793165502809195" in its buffer.
+S12 Starts the loop section.
+S12 READ SENSOR: S#25#80.88717236246586
+S12 Read DATA: S#25#80.88717236246586
+S12 is writing the message : "80.88717236246586" in its buffer.
+S17 Starts the loop section.
+S17 READ SENSOR: S#30#32.51479918600969
+S17 Read DATA: S#30#32.51479918600969
+S17 is writing the message : "32.51479918600969" in its buffer.
+S15 Starts the loop section.
+S15 READ SENSOR: S#27#13.58583722624433
+S15 Read DATA: S#27#13.58583722624433
+S15 is writing the message : "13.58583722624433" in its buffer.
+S2 Starts the loop section.
+S2 READ SENSOR: S#10#25.077246535911208
+S2 Read DATA: S#10#25.077246535911208
+S2 is writing the message : "25.077246535911208" in its buffer.
+A25 VALUE GENERATION
+A26 VALUE GENERATION
+A9 VALUE GENERATION
+A10 VALUE GENERATION
+A28 VALUE GENERATION
+A29 VALUE GENERATION
+A23 VALUE GENERATION
+A27 VALUE GENERATION
+A24 VALUE GENERATION
+A30 VALUE GENERATION
+
+----------------------------------------------------------------------------
+Time : 2.0
+Min (milliseconds) : 1.36E-19
+S11 is listening to the channel
+S11 the channel is free.
+S11 starts sending the message : "70.27497069351782".
+S11 has finished sending the message : "70.27497069351782" to the node: 
+S20 (radio: radio1) is receiving the message : "70.27497069351782" in its buffer.
+S11 starts delaying for 1000.0 milliseconds
+S13 is listening to the channel
+S13 the channel is free.
+S13 starts sending the message : "16.75813667942955".
+S13 has finished sending the message : "16.75813667942955" to the node: 
+S19 (radio: radio1) is receiving the message : "16.75813667942955" in its buffer.
+S13 starts delaying for 1000.0 milliseconds
+S1 is listening to the channel
+S1 the channel is free.
+S1 starts sending the message : "9.793165502809195".
+S1 has finished sending the message : "9.793165502809195" to the node: 
+S4 (radio: radio1) is receiving the message : "9.793165502809195" in its buffer.
+S1 starts delaying for 1000.0 milliseconds
+S12 is listening to the channel
+S12 the channel is free.
+S12 starts sending the message : "80.88717236246586".
+S12 has finished sending the message : "80.88717236246586" to the node: 
+S20 (radio: radio1) is receiving the message : "80.88717236246586" in its buffer.
+S12 starts delaying for 1000.0 milliseconds
+S17 is listening to the channel
+S17 the channel is free.
+S17 starts sending the message : "32.51479918600969".
+S17 has finished sending the message : "32.51479918600969" to the node: 
+S22 (radio: radio1) is receiving the message : "32.51479918600969" in its buffer.
+S17 starts delaying for 1000.0 milliseconds
+S15 is listening to the channel
+S15 the channel is free.
+S15 starts sending the message : "13.58583722624433".
+S15 has finished sending the message : "13.58583722624433" to the node: 
+S21 (radio: radio1) is receiving the message : "13.58583722624433" in its buffer.
+S15 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 2.0
+Min (milliseconds) : 8.000000000000001E-21
+S18 is listening to the channel
+S18 the channel is free.
+S18 starts sending the message : "22.522102555583295".
+S18 has finished sending the message : "22.522102555583295" to the node: 
+S22 (radio: radio1) is receiving the message : "22.522102555583295" in its buffer.
+S18 starts delaying for 1000.0 milliseconds
+S14 is listening to the channel
+S14 the channel is free.
+S14 starts sending the message : "19.028821464639023".
+S14 has finished sending the message : "19.028821464639023" to the node: 
+S19 (radio: radio1) is receiving the message : "19.028821464639023" in its buffer.
+S14 starts delaying for 1000.0 milliseconds
+S16 is listening to the channel
+S16 the channel is free.
+S16 starts sending the message : "32.509834476175115".
+S16 has finished sending the message : "32.509834476175115" to the node: 
+S21 (radio: radio1) is receiving the message : "32.509834476175115" in its buffer.
+S16 starts delaying for 1000.0 milliseconds
+S2 is listening to the channel
+S2 the channel is free.
+S2 starts sending the message : "25.077246535911208".
+S2 has finished sending the message : "25.077246535911208" to the node: 
+S4 (radio: radio1) is receiving the message : "25.077246535911208" in its buffer.
+S2 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 2.020566666666667
+Min (milliseconds) : 0.020566666666666667
+S20 is reading from its buffer "70.27497069351782" and puts it in x
+S20 Buffer available, exit waiting.
+S20 READ : x = 70.27497069351782
+S20 is reading from its buffer "80.88717236246586" and puts it in y
+S20 Buffer available, exit waiting.
+S20 READ : y = 80.88717236246586
+S20 DATA Creation:70.27497069351782#80.88717236246586
+S20 GET TIME.
+S20 PRINTFILE [printfile, t, x, y]
+S20 Starts the loop section.
+S20 is waiting for data ...
+S19 is reading from its buffer "16.75813667942955" and puts it in x
+S19 Buffer available, exit waiting.
+S19 READ : x = 16.75813667942955
+S19 is waiting for data ...
+S21 is reading from its buffer "13.58583722624433" and puts it in x
+S21 Buffer available, exit waiting.
+S21 READ : x = 13.58583722624433
+S21 is waiting for data ...
+S22 is reading from its buffer "32.51479918600969" and puts it in x
+S22 Buffer available, exit waiting.
+S22 READ : x = 32.51479918600969
+S22 is waiting for data ...
+S4 is reading from its buffer "9.793165502809195" and puts it in x
+S4 Buffer available, exit waiting.
+S4 READ : x = 9.793165502809195
+S4 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 2.021656
+Min (milliseconds) : 0.0010893333333333345
+S19 is reading from its buffer "19.028821464639023" and puts it in y
+S19 Buffer available, exit waiting.
+S19 READ : y = 19.028821464639023
+S19 DATA Creation:16.75813667942955#19.028821464639023
+S19 GET TIME.
+S19 PRINTFILE [printfile, t, x, y]
+S19 Starts the loop section.
+S19 is waiting for data ...
+S21 is reading from its buffer "32.509834476175115" and puts it in y
+S21 Buffer available, exit waiting.
+S21 READ : y = 32.509834476175115
+S21 DATA Creation:13.58583722624433#32.509834476175115
+S21 GET TIME.
+S21 PRINTFILE [printfile, t, x, y]
+S21 Starts the loop section.
+S21 is waiting for data ...
+S22 is reading from its buffer "22.522102555583295" and puts it in y
+S22 Buffer available, exit waiting.
+S22 READ : y = 22.522102555583295
+S22 DATA Creation:32.51479918600969#22.522102555583295
+S22 GET TIME.
+S22 PRINTFILE [printfile, t, x, y]
+S22 Starts the loop section.
+S22 is waiting for data ...
+S4 is reading from its buffer "25.077246535911208" and puts it in y
+S4 Buffer available, exit waiting.
+S4 READ : y = 25.077246535911208
+S4 DATA Creation:9.793165502809195#25.077246535911208
+S4 GET TIME.
+S4 PRINTFILE [printfile, t, x, y]
+S4 Starts the loop section.
+S4 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 3.0
+Min (milliseconds) : 0.978344
+S18 has finished the delay.
+S14 has finished the delay.
+S11 has finished the delay.
+S16 has finished the delay.
+S13 has finished the delay.
+S1 has finished the delay.
+S12 has finished the delay.
+S17 has finished the delay.
+S15 has finished the delay.
+S2 has finished the delay.
+
+S18 Starts the loop section.
+S18 READ SENSOR: S#29#28.15685184190292
+S18 Read DATA: S#29#28.15685184190292
+S18 is writing the message : "28.15685184190292" in its buffer.
+S14 Starts the loop section.
+S14 READ SENSOR: S#24#15.367644742642415
+S14 Read DATA: S#24#15.367644742642415
+S14 is writing the message : "15.367644742642415" in its buffer.
+S11 Starts the loop section.
+S11 READ SENSOR: S#26#82.66680780804676
+S11 Read DATA: S#26#82.66680780804676
+S11 is writing the message : "82.66680780804676" in its buffer.
+S16 Starts the loop section.
+S16 READ SENSOR: S#28#50.41595773002742
+S16 Read DATA: S#28#50.41595773002742
+S16 is writing the message : "50.41595773002742" in its buffer.
+S13 Starts the loop section.
+S13 READ SENSOR: S#23#15.050375388552874
+S13 Read DATA: S#23#15.050375388552874
+S13 is writing the message : "15.050375388552874" in its buffer.
+S1 Starts the loop section.
+S1 READ SENSOR: S#9#11.827267644536526
+S1 Read DATA: S#9#11.827267644536526
+S1 is writing the message : "11.827267644536526" in its buffer.
+S12 Starts the loop section.
+S12 READ SENSOR: S#25#76.05002534610865
+S12 Read DATA: S#25#76.05002534610865
+S12 is writing the message : "76.05002534610865" in its buffer.
+S17 Starts the loop section.
+S17 READ SENSOR: S#30#20.0556857212813
+S17 Read DATA: S#30#20.0556857212813
+S17 is writing the message : "20.0556857212813" in its buffer.
+S15 Starts the loop section.
+S15 READ SENSOR: S#27#69.73333119805068
+S15 Read DATA: S#27#69.73333119805068
+S15 is writing the message : "69.73333119805068" in its buffer.
+S2 Starts the loop section.
+S2 READ SENSOR: S#10#19.99698593793383
+S2 Read DATA: S#10#19.99698593793383
+S2 is writing the message : "19.99698593793383" in its buffer.
+A25 VALUE GENERATION
+A26 VALUE GENERATION
+A9 VALUE GENERATION
+A10 VALUE GENERATION
+A28 VALUE GENERATION
+A29 VALUE GENERATION
+A23 VALUE GENERATION
+A27 VALUE GENERATION
+A24 VALUE GENERATION
+A30 VALUE GENERATION
+
+----------------------------------------------------------------------------
+Time : 3.0
+Min (milliseconds) : 1.28E-19
+S17 is listening to the channel
+S17 the channel is free.
+S17 starts sending the message : "20.0556857212813".
+S17 has finished sending the message : "20.0556857212813" to the node: 
+S22 (radio: radio1) is receiving the message : "20.0556857212813" in its buffer.
+S17 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 3.0
+Min (milliseconds) : 8.000000000000001E-21
+S18 is listening to the channel
+S18 the channel is free.
+S18 starts sending the message : "28.15685184190292".
+S18 has finished sending the message : "28.15685184190292" to the node: 
+S22 (radio: radio1) is receiving the message : "28.15685184190292" in its buffer.
+S18 starts delaying for 1000.0 milliseconds
+S11 is listening to the channel
+S11 the channel is free.
+S11 starts sending the message : "82.66680780804676".
+S11 has finished sending the message : "82.66680780804676" to the node: 
+S20 (radio: radio1) is receiving the message : "82.66680780804676" in its buffer.
+S11 starts delaying for 1000.0 milliseconds
+S16 is listening to the channel
+S16 the channel is free.
+S16 starts sending the message : "50.41595773002742".
+S16 has finished sending the message : "50.41595773002742" to the node: 
+S21 (radio: radio1) is receiving the message : "50.41595773002742" in its buffer.
+S16 starts delaying for 1000.0 milliseconds
+S12 is listening to the channel
+S12 the channel is free.
+S12 starts sending the message : "76.05002534610865".
+S12 has finished sending the message : "76.05002534610865" to the node: 
+S20 (radio: radio1) is receiving the message : "76.05002534610865" in its buffer.
+S12 starts delaying for 1000.0 milliseconds
+S15 is listening to the channel
+S15 the channel is free.
+S15 starts sending the message : "69.73333119805068".
+S15 has finished sending the message : "69.73333119805068" to the node: 
+S21 (radio: radio1) is receiving the message : "69.73333119805068" in its buffer.
+S15 starts delaying for 1000.0 milliseconds
+S2 is listening to the channel
+S2 the channel is free.
+S2 starts sending the message : "19.99698593793383".
+S2 has finished sending the message : "19.99698593793383" to the node: 
+S4 (radio: radio1) is receiving the message : "19.99698593793383" in its buffer.
+S2 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 3.0
+Min (milliseconds) : 8.000000000000001E-21
+S14 is listening to the channel
+S14 the channel is free.
+S14 starts sending the message : "15.367644742642415".
+S14 has finished sending the message : "15.367644742642415" to the node: 
+S19 (radio: radio1) is receiving the message : "15.367644742642415" in its buffer.
+S14 starts delaying for 1000.0 milliseconds
+S13 is listening to the channel
+S13 the channel is free.
+S13 starts sending the message : "15.050375388552874".
+S13 has finished sending the message : "15.050375388552874" to the node: 
+S19 (radio: radio1) is receiving the message : "15.050375388552874" in its buffer.
+S13 starts delaying for 1000.0 milliseconds
+S1 is listening to the channel
+S1 the channel is free.
+S1 starts sending the message : "11.827267644536526".
+S1 has finished sending the message : "11.827267644536526" to the node: 
+S4 (radio: radio1) is receiving the message : "11.827267644536526" in its buffer.
+S1 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 3.019477333333333
+Min (milliseconds) : 0.019477333333333333
+S22 is reading from its buffer "20.0556857212813" and puts it in x
+S22 Buffer available, exit waiting.
+S22 READ : x = 20.0556857212813
+S22 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 3.0205666666666664
+Min (milliseconds) : 0.0010893333333333345
+S20 is reading from its buffer "82.66680780804676" and puts it in x
+S20 Buffer available, exit waiting.
+S20 READ : x = 82.66680780804676
+S20 is reading from its buffer "76.05002534610865" and puts it in y
+S20 Buffer available, exit waiting.
+S20 READ : y = 76.05002534610865
+S20 DATA Creation:82.66680780804676#76.05002534610865
+S20 GET TIME.
+S20 PRINTFILE [printfile, t, x, y]
+S20 Starts the loop section.
+S20 is waiting for data ...
+S21 is reading from its buffer "50.41595773002742" and puts it in x
+S21 Buffer available, exit waiting.
+S21 READ : x = 50.41595773002742
+S21 is reading from its buffer "69.73333119805068" and puts it in y
+S21 Buffer available, exit waiting.
+S21 READ : y = 69.73333119805068
+S21 DATA Creation:50.41595773002742#69.73333119805068
+S21 GET TIME.
+S21 PRINTFILE [printfile, t, x, y]
+S21 Starts the loop section.
+S21 is waiting for data ...
+S22 is reading from its buffer "28.15685184190292" and puts it in y
+S22 Buffer available, exit waiting.
+S22 READ : y = 28.15685184190292
+S22 DATA Creation:20.0556857212813#28.15685184190292
+S22 GET TIME.
+S22 PRINTFILE [printfile, t, x, y]
+S22 Starts the loop section.
+S22 is waiting for data ...
+S4 is reading from its buffer "19.99698593793383" and puts it in x
+S4 Buffer available, exit waiting.
+S4 READ : x = 19.99698593793383
+S4 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 3.0216559999999997
+Min (milliseconds) : 0.0010893333333333345
+S19 is reading from its buffer "15.367644742642415" and puts it in x
+S19 Buffer available, exit waiting.
+S19 READ : x = 15.367644742642415
+S19 is reading from its buffer "15.050375388552874" and puts it in y
+S19 Buffer available, exit waiting.
+S19 READ : y = 15.050375388552874
+S19 DATA Creation:15.367644742642415#15.050375388552874
+S19 GET TIME.
+S19 PRINTFILE [printfile, t, x, y]
+S19 Starts the loop section.
+S19 is waiting for data ...
+S4 is reading from its buffer "11.827267644536526" and puts it in y
+S4 Buffer available, exit waiting.
+S4 READ : y = 11.827267644536526
+S4 DATA Creation:19.99698593793383#11.827267644536526
+S4 GET TIME.
+S4 PRINTFILE [printfile, t, x, y]
+S4 Starts the loop section.
+S4 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 3.9999999999999996
+Min (milliseconds) : 0.9783439999999999
+S18 has finished the delay.
+S14 has finished the delay.
+S11 has finished the delay.
+S16 has finished the delay.
+S13 has finished the delay.
+S1 has finished the delay.
+S12 has finished the delay.
+S17 has finished the delay.
+S15 has finished the delay.
+S2 has finished the delay.
+
+S18 Starts the loop section.
+S18 READ SENSOR: S#29#20.8386449977599
+S18 Read DATA: S#29#20.8386449977599
+S18 is writing the message : "20.8386449977599" in its buffer.
+S14 Starts the loop section.
+S14 READ SENSOR: S#24#16.039049347421326
+S14 Read DATA: S#24#16.039049347421326
+S14 is writing the message : "16.039049347421326" in its buffer.
+S11 Starts the loop section.
+S11 READ SENSOR: S#26#84.89377617435665
+S11 Read DATA: S#26#84.89377617435665
+S11 is writing the message : "84.89377617435665" in its buffer.
+S16 Starts the loop section.
+S16 READ SENSOR: S#28#23.839978285686247
+S16 Read DATA: S#28#23.839978285686247
+S16 is writing the message : "23.839978285686247" in its buffer.
+S13 Starts the loop section.
+S13 READ SENSOR: S#23#9.781914671230329
+S13 Read DATA: S#23#9.781914671230329
+S13 is writing the message : "9.781914671230329" in its buffer.
+S1 Starts the loop section.
+S1 READ SENSOR: S#9#12.171679798508787
+S1 Read DATA: S#9#12.171679798508787
+S1 is writing the message : "12.171679798508787" in its buffer.
+S12 Starts the loop section.
+S12 READ SENSOR: S#25#84.63747465625292
+S12 Read DATA: S#25#84.63747465625292
+S12 is writing the message : "84.63747465625292" in its buffer.
+S17 Starts the loop section.
+S17 READ SENSOR: S#30#24.811008326664115
+S17 Read DATA: S#30#24.811008326664115
+S17 is writing the message : "24.811008326664115" in its buffer.
+S15 Starts the loop section.
+S15 READ SENSOR: S#27#44.33359463394824
+S15 Read DATA: S#27#44.33359463394824
+S15 is writing the message : "44.33359463394824" in its buffer.
+S2 Starts the loop section.
+S2 READ SENSOR: S#10#22.954653414706073
+S2 Read DATA: S#10#22.954653414706073
+S2 is writing the message : "22.954653414706073" in its buffer.
+A25 VALUE GENERATION
+A26 VALUE GENERATION
+A9 VALUE GENERATION
+A10 VALUE GENERATION
+A28 VALUE GENERATION
+A29 VALUE GENERATION
+A23 VALUE GENERATION
+A27 VALUE GENERATION
+A24 VALUE GENERATION
+A30 VALUE GENERATION
+
+----------------------------------------------------------------------------
+Time : 3.9999999999999996
+Min (milliseconds) : 1.28E-19
+S18 is listening to the channel
+S18 the channel is free.
+S18 starts sending the message : "20.8386449977599".
+S18 has finished sending the message : "20.8386449977599" to the node: 
+S22 (radio: radio1) is receiving the message : "20.8386449977599" in its buffer.
+S18 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 3.9999999999999996
+Min (milliseconds) : 8.000000000000001E-21
+S11 is listening to the channel
+S11 the channel is free.
+S11 starts sending the message : "84.89377617435665".
+S11 has finished sending the message : "84.89377617435665" to the node: 
+S20 (radio: radio1) is receiving the message : "84.89377617435665" in its buffer.
+S11 starts delaying for 1000.0 milliseconds
+S13 is listening to the channel
+S13 the channel is free.
+S13 starts sending the message : "9.781914671230329".
+S13 has finished sending the message : "9.781914671230329" to the node: 
+S19 (radio: radio1) is receiving the message : "9.781914671230329" in its buffer.
+S13 starts delaying for 1000.0 milliseconds
+S12 is listening to the channel
+S12 the channel is free.
+S12 starts sending the message : "84.63747465625292".
+S12 has finished sending the message : "84.63747465625292" to the node: 
+S20 (radio: radio1) is receiving the message : "84.63747465625292" in its buffer.
+S12 starts delaying for 1000.0 milliseconds
+S15 is listening to the channel
+S15 the channel is free.
+S15 starts sending the message : "44.33359463394824".
+S15 has finished sending the message : "44.33359463394824" to the node: 
+S21 (radio: radio1) is receiving the message : "44.33359463394824" in its buffer.
+S15 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 3.9999999999999996
+Min (milliseconds) : 8.000000000000001E-21
+S14 is listening to the channel
+S14 the channel is free.
+S14 starts sending the message : "16.039049347421326".
+S14 has finished sending the message : "16.039049347421326" to the node: 
+S19 (radio: radio1) is receiving the message : "16.039049347421326" in its buffer.
+S14 starts delaying for 1000.0 milliseconds
+S16 is listening to the channel
+S16 the channel is free.
+S16 starts sending the message : "23.839978285686247".
+S16 has finished sending the message : "23.839978285686247" to the node: 
+S21 (radio: radio1) is receiving the message : "23.839978285686247" in its buffer.
+S16 starts delaying for 1000.0 milliseconds
+S1 is listening to the channel
+S1 the channel is free.
+S1 starts sending the message : "12.171679798508787".
+S1 has finished sending the message : "12.171679798508787" to the node: 
+S4 (radio: radio1) is receiving the message : "12.171679798508787" in its buffer.
+S1 starts delaying for 1000.0 milliseconds
+S17 is listening to the channel
+S17 the channel is free.
+S17 starts sending the message : "24.811008326664115".
+S17 has finished sending the message : "24.811008326664115" to the node: 
+S22 (radio: radio1) is receiving the message : "24.811008326664115" in its buffer.
+S17 starts delaying for 1000.0 milliseconds
+S2 is listening to the channel
+S2 the channel is free.
+S2 starts sending the message : "22.954653414706073".
+S2 has finished sending the message : "22.954653414706073" to the node: 
+S4 (radio: radio1) is receiving the message : "22.954653414706073" in its buffer.
+S2 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 4.019477333333333
+Min (milliseconds) : 0.019477333333333333
+S22 is reading from its buffer "20.8386449977599" and puts it in x
+S22 Buffer available, exit waiting.
+S22 READ : x = 20.8386449977599
+S22 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 4.020566666666666
+Min (milliseconds) : 0.0010893333333333345
+S20 is reading from its buffer "84.89377617435665" and puts it in x
+S20 Buffer available, exit waiting.
+S20 READ : x = 84.89377617435665
+S20 is reading from its buffer "84.63747465625292" and puts it in y
+S20 Buffer available, exit waiting.
+S20 READ : y = 84.63747465625292
+S20 DATA Creation:84.89377617435665#84.63747465625292
+S20 GET TIME.
+S20 PRINTFILE [printfile, t, x, y]
+S20 Starts the loop section.
+S20 is waiting for data ...
+S19 is reading from its buffer "9.781914671230329" and puts it in x
+S19 Buffer available, exit waiting.
+S19 READ : x = 9.781914671230329
+S19 is waiting for data ...
+S21 is reading from its buffer "44.33359463394824" and puts it in x
+S21 Buffer available, exit waiting.
+S21 READ : x = 44.33359463394824
+S21 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 4.021656
+Min (milliseconds) : 0.0010893333333333345
+S19 is reading from its buffer "16.039049347421326" and puts it in y
+S19 Buffer available, exit waiting.
+S19 READ : y = 16.039049347421326
+S19 DATA Creation:9.781914671230329#16.039049347421326
+S19 GET TIME.
+S19 PRINTFILE [printfile, t, x, y]
+S19 Starts the loop section.
+S19 is waiting for data ...
+S21 is reading from its buffer "23.839978285686247" and puts it in y
+S21 Buffer available, exit waiting.
+S21 READ : y = 23.839978285686247
+S21 DATA Creation:44.33359463394824#23.839978285686247
+S21 GET TIME.
+S21 PRINTFILE [printfile, t, x, y]
+S21 Starts the loop section.
+S21 is waiting for data ...
+S22 is reading from its buffer "24.811008326664115" and puts it in y
+S22 Buffer available, exit waiting.
+S22 READ : y = 24.811008326664115
+S22 DATA Creation:20.8386449977599#24.811008326664115
+S22 GET TIME.
+S22 PRINTFILE [printfile, t, x, y]
+S22 Starts the loop section.
+S22 is waiting for data ...
+S4 is reading from its buffer "12.171679798508787" and puts it in x
+S4 Buffer available, exit waiting.
+S4 READ : x = 12.171679798508787
+S4 is reading from its buffer "22.954653414706073" and puts it in y
+S4 Buffer available, exit waiting.
+S4 READ : y = 22.954653414706073
+S4 DATA Creation:12.171679798508787#22.954653414706073
+S4 GET TIME.
+S4 PRINTFILE [printfile, t, x, y]
+S4 Starts the loop section.
+S4 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 5.0
+Min (milliseconds) : 0.9783439999999999
+S18 has finished the delay.
+S14 has finished the delay.
+S11 has finished the delay.
+S16 has finished the delay.
+S13 has finished the delay.
+S1 has finished the delay.
+S12 has finished the delay.
+S17 has finished the delay.
+S15 has finished the delay.
+S2 has finished the delay.
+
+S18 Starts the loop section.
+S18 READ SENSOR: S#29#21.463949773849144
+S18 Read DATA: S#29#21.463949773849144
+S18 is writing the message : "21.463949773849144" in its buffer.
+S14 Starts the loop section.
+S14 READ SENSOR: S#24#11.490820669533608
+S14 Read DATA: S#24#11.490820669533608
+S14 is writing the message : "11.490820669533608" in its buffer.
+S11 Starts the loop section.
+S11 READ SENSOR: S#26#82.00755962220886
+S11 Read DATA: S#26#82.00755962220886
+S11 is writing the message : "82.00755962220886" in its buffer.
+S16 Starts the loop section.
+S16 READ SENSOR: S#28#38.31476524286602
+S16 Read DATA: S#28#38.31476524286602
+S16 is writing the message : "38.31476524286602" in its buffer.
+S13 Starts the loop section.
+S13 READ SENSOR: S#23#14.32174594846579
+S13 Read DATA: S#23#14.32174594846579
+S13 is writing the message : "14.32174594846579" in its buffer.
+S1 Starts the loop section.
+S1 READ SENSOR: S#9#6.311916960132867
+S1 Read DATA: S#9#6.311916960132867
+S1 is writing the message : "6.311916960132867" in its buffer.
+S12 Starts the loop section.
+S12 READ SENSOR: S#25#91.1262182646563
+S12 Read DATA: S#25#91.1262182646563
+S12 is writing the message : "91.1262182646563" in its buffer.
+S17 Starts the loop section.
+S17 READ SENSOR: S#30#26.992325545669967
+S17 Read DATA: S#30#26.992325545669967
+S17 is writing the message : "26.992325545669967" in its buffer.
+S15 Starts the loop section.
+S15 READ SENSOR: S#27#62.415005252179746
+S15 Read DATA: S#27#62.415005252179746
+S15 is writing the message : "62.415005252179746" in its buffer.
+S2 Starts the loop section.
+S2 READ SENSOR: S#10#27.57837372915129
+S2 Read DATA: S#10#27.57837372915129
+S2 is writing the message : "27.57837372915129" in its buffer.
+A25 VALUE GENERATION
+A26 VALUE GENERATION
+A9 VALUE GENERATION
+A10 VALUE GENERATION
+A28 VALUE GENERATION
+A29 VALUE GENERATION
+A23 VALUE GENERATION
+A27 VALUE GENERATION
+A24 VALUE GENERATION
+A30 VALUE GENERATION
+
+----------------------------------------------------------------------------
+Time : 5.0
+Min (milliseconds) : 1.28E-19
+S12 is listening to the channel
+S12 the channel is free.
+S12 starts sending the message : "91.1262182646563".
+S12 has finished sending the message : "91.1262182646563" to the node: 
+S20 (radio: radio1) is receiving the message : "91.1262182646563" in its buffer.
+S12 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 5.0
+Min (milliseconds) : 8.000000000000001E-21
+S11 is listening to the channel
+S11 the channel is free.
+S11 starts sending the message : "82.00755962220886".
+S11 has finished sending the message : "82.00755962220886" to the node: 
+S20 (radio: radio1) is receiving the message : "82.00755962220886" in its buffer.
+S11 starts delaying for 1000.0 milliseconds
+S16 is listening to the channel
+S16 the channel is free.
+S16 starts sending the message : "38.31476524286602".
+S16 has finished sending the message : "38.31476524286602" to the node: 
+S21 (radio: radio1) is receiving the message : "38.31476524286602" in its buffer.
+S16 starts delaying for 1000.0 milliseconds
+S13 is listening to the channel
+S13 the channel is free.
+S13 starts sending the message : "14.32174594846579".
+S13 has finished sending the message : "14.32174594846579" to the node: 
+S19 (radio: radio1) is receiving the message : "14.32174594846579" in its buffer.
+S13 starts delaying for 1000.0 milliseconds
+S1 is listening to the channel
+S1 the channel is free.
+S1 starts sending the message : "6.311916960132867".
+S1 has finished sending the message : "6.311916960132867" to the node: 
+S4 (radio: radio1) is receiving the message : "6.311916960132867" in its buffer.
+S1 starts delaying for 1000.0 milliseconds
+S2 is listening to the channel
+S2 the channel is free.
+S2 starts sending the message : "27.57837372915129".
+S2 has finished sending the message : "27.57837372915129" to the node: 
+S4 (radio: radio1) is receiving the message : "27.57837372915129" in its buffer.
+S2 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 5.0
+Min (milliseconds) : 8.000000000000001E-21
+S18 is listening to the channel
+S18 the channel is free.
+S18 starts sending the message : "21.463949773849144".
+S18 has finished sending the message : "21.463949773849144" to the node: 
+S22 (radio: radio1) is receiving the message : "21.463949773849144" in its buffer.
+S18 starts delaying for 1000.0 milliseconds
+S14 is listening to the channel
+S14 the channel is free.
+S14 starts sending the message : "11.490820669533608".
+S14 has finished sending the message : "11.490820669533608" to the node: 
+S19 (radio: radio1) is receiving the message : "11.490820669533608" in its buffer.
+S14 starts delaying for 1000.0 milliseconds
+S17 is listening to the channel
+S17 the channel is free.
+S17 starts sending the message : "26.992325545669967".
+S17 has finished sending the message : "26.992325545669967" to the node: 
+S22 (radio: radio1) is receiving the message : "26.992325545669967" in its buffer.
+S17 starts delaying for 1000.0 milliseconds
+S15 is listening to the channel
+S15 the channel is free.
+S15 starts sending the message : "62.415005252179746".
+S15 has finished sending the message : "62.415005252179746" to the node: 
+S21 (radio: radio1) is receiving the message : "62.415005252179746" in its buffer.
+S15 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 5.019477333333334
+Min (milliseconds) : 0.019477333333333333
+S20 is reading from its buffer "91.1262182646563" and puts it in x
+S20 Buffer available, exit waiting.
+S20 READ : x = 91.1262182646563
+S20 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 5.020566666666667
+Min (milliseconds) : 0.0010893333333333345
+S20 is reading from its buffer "82.00755962220886" and puts it in y
+S20 Buffer available, exit waiting.
+S20 READ : y = 82.00755962220886
+S20 DATA Creation:91.1262182646563#82.00755962220886
+S20 GET TIME.
+S20 PRINTFILE [printfile, t, x, y]
+S20 Starts the loop section.
+S20 is waiting for data ...
+S19 is reading from its buffer "14.32174594846579" and puts it in x
+S19 Buffer available, exit waiting.
+S19 READ : x = 14.32174594846579
+S19 is waiting for data ...
+S21 is reading from its buffer "38.31476524286602" and puts it in x
+S21 Buffer available, exit waiting.
+S21 READ : x = 38.31476524286602
+S21 is waiting for data ...
+S4 is reading from its buffer "6.311916960132867" and puts it in x
+S4 Buffer available, exit waiting.
+S4 READ : x = 6.311916960132867
+S4 is reading from its buffer "27.57837372915129" and puts it in y
+S4 Buffer available, exit waiting.
+S4 READ : y = 27.57837372915129
+S4 DATA Creation:6.311916960132867#27.57837372915129
+S4 GET TIME.
+S4 PRINTFILE [printfile, t, x, y]
+S4 Starts the loop section.
+S4 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 5.021656000000001
+Min (milliseconds) : 0.0010893333333333345
+S19 is reading from its buffer "11.490820669533608" and puts it in y
+S19 Buffer available, exit waiting.
+S19 READ : y = 11.490820669533608
+S19 DATA Creation:14.32174594846579#11.490820669533608
+S19 GET TIME.
+S19 PRINTFILE [printfile, t, x, y]
+S19 Starts the loop section.
+S19 is waiting for data ...
+S21 is reading from its buffer "62.415005252179746" and puts it in y
+S21 Buffer available, exit waiting.
+S21 READ : y = 62.415005252179746
+S21 DATA Creation:38.31476524286602#62.415005252179746
+S21 GET TIME.
+S21 PRINTFILE [printfile, t, x, y]
+S21 Starts the loop section.
+S21 is waiting for data ...
+S22 is reading from its buffer "21.463949773849144" and puts it in x
+S22 Buffer available, exit waiting.
+S22 READ : x = 21.463949773849144
+S22 is reading from its buffer "26.992325545669967" and puts it in y
+S22 Buffer available, exit waiting.
+S22 READ : y = 26.992325545669967
+S22 DATA Creation:21.463949773849144#26.992325545669967
+S22 GET TIME.
+S22 PRINTFILE [printfile, t, x, y]
+S22 Starts the loop section.
+S22 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 6.000000000000001
+Min (milliseconds) : 0.9783439999999999
+S18 has finished the delay.
+S14 has finished the delay.
+S11 has finished the delay.
+S16 has finished the delay.
+S13 has finished the delay.
+S1 has finished the delay.
+S12 has finished the delay.
+S17 has finished the delay.
+S15 has finished the delay.
+S2 has finished the delay.
+
+S18 Starts the loop section.
+S18 READ SENSOR: S#29#31.791841879648658
+S18 Read DATA: S#29#31.791841879648658
+S18 is writing the message : "31.791841879648658" in its buffer.
+S14 Starts the loop section.
+S14 READ SENSOR: S#24#23.7542914833511
+S14 Read DATA: S#24#23.7542914833511
+S14 is writing the message : "23.7542914833511" in its buffer.
+S11 Starts the loop section.
+S11 READ SENSOR: S#26#77.99090485881369
+S11 Read DATA: S#26#77.99090485881369
+S11 is writing the message : "77.99090485881369" in its buffer.
+S16 Starts the loop section.
+S16 READ SENSOR: S#28#52.3494681931907
+S16 Read DATA: S#28#52.3494681931907
+S16 is writing the message : "52.3494681931907" in its buffer.
+S13 Starts the loop section.
+S13 READ SENSOR: S#23#18.497799279774
+S13 Read DATA: S#23#18.497799279774
+S13 is writing the message : "18.497799279774" in its buffer.
+S1 Starts the loop section.
+S1 READ SENSOR: S#9#9.368183226500236
+S1 Read DATA: S#9#9.368183226500236
+S1 is writing the message : "9.368183226500236" in its buffer.
+S12 Starts the loop section.
+S12 READ SENSOR: S#25#77.28241408202861
+S12 Read DATA: S#25#77.28241408202861
+S12 is writing the message : "77.28241408202861" in its buffer.
+S17 Starts the loop section.
+S17 READ SENSOR: S#30#25.746634084194085
+S17 Read DATA: S#30#25.746634084194085
+S17 is writing the message : "25.746634084194085" in its buffer.
+S15 Starts the loop section.
+S15 READ SENSOR: S#27#77.67137464342241
+S15 Read DATA: S#27#77.67137464342241
+S15 is writing the message : "77.67137464342241" in its buffer.
+S2 Starts the loop section.
+S2 READ SENSOR: S#10#24.04642899197905
+S2 Read DATA: S#10#24.04642899197905
+S2 is writing the message : "24.04642899197905" in its buffer.
+A25 VALUE GENERATION
+A26 VALUE GENERATION
+A9 VALUE GENERATION
+A10 VALUE GENERATION
+A28 VALUE GENERATION
+A29 VALUE GENERATION
+A23 VALUE GENERATION
+A27 VALUE GENERATION
+A24 VALUE GENERATION
+A30 VALUE GENERATION
+
+----------------------------------------------------------------------------
+Time : 6.000000000000001
+Min (milliseconds) : 1.1999999999999999E-19
+S13 is listening to the channel
+S13 the channel is free.
+S13 starts sending the message : "18.497799279774".
+S13 has finished sending the message : "18.497799279774" to the node: 
+S19 (radio: radio1) is receiving the message : "18.497799279774" in its buffer.
+S13 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 6.000000000000001
+Min (milliseconds) : 8.000000000000001E-21
+S14 is listening to the channel
+S14 the channel is free.
+S14 starts sending the message : "23.7542914833511".
+S14 has finished sending the message : "23.7542914833511" to the node: 
+S19 (radio: radio1) is receiving the message : "23.7542914833511" in its buffer.
+S14 starts delaying for 1000.0 milliseconds
+S16 is listening to the channel
+S16 the channel is free.
+S16 starts sending the message : "52.3494681931907".
+S16 has finished sending the message : "52.3494681931907" to the node: 
+S21 (radio: radio1) is receiving the message : "52.3494681931907" in its buffer.
+S16 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 6.000000000000001
+Min (milliseconds) : 8.000000000000001E-21
+S11 is listening to the channel
+S11 the channel is free.
+S11 starts sending the message : "77.99090485881369".
+S11 has finished sending the message : "77.99090485881369" to the node: 
+S20 (radio: radio1) is receiving the message : "77.99090485881369" in its buffer.
+S11 starts delaying for 1000.0 milliseconds
+S1 is listening to the channel
+S1 the channel is free.
+S1 starts sending the message : "9.368183226500236".
+S1 has finished sending the message : "9.368183226500236" to the node: 
+S4 (radio: radio1) is receiving the message : "9.368183226500236" in its buffer.
+S1 starts delaying for 1000.0 milliseconds
+S12 is listening to the channel
+S12 the channel is free.
+S12 starts sending the message : "77.28241408202861".
+S12 has finished sending the message : "77.28241408202861" to the node: 
+S20 (radio: radio1) is receiving the message : "77.28241408202861" in its buffer.
+S12 starts delaying for 1000.0 milliseconds
+S15 is listening to the channel
+S15 the channel is free.
+S15 starts sending the message : "77.67137464342241".
+S15 has finished sending the message : "77.67137464342241" to the node: 
+S21 (radio: radio1) is receiving the message : "77.67137464342241" in its buffer.
+S15 starts delaying for 1000.0 milliseconds
+S2 is listening to the channel
+S2 the channel is free.
+S2 starts sending the message : "24.04642899197905".
+S2 has finished sending the message : "24.04642899197905" to the node: 
+S4 (radio: radio1) is receiving the message : "24.04642899197905" in its buffer.
+S2 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 6.000000000000001
+Min (milliseconds) : 8.000000000000001E-21
+S18 is listening to the channel
+S18 the channel is free.
+S18 starts sending the message : "31.791841879648658".
+S18 has finished sending the message : "31.791841879648658" to the node: 
+S22 (radio: radio1) is receiving the message : "31.791841879648658" in its buffer.
+S18 starts delaying for 1000.0 milliseconds
+S17 is listening to the channel
+S17 the channel is free.
+S17 starts sending the message : "25.746634084194085".
+S17 has finished sending the message : "25.746634084194085" to the node: 
+S22 (radio: radio1) is receiving the message : "25.746634084194085" in its buffer.
+S17 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 6.018388000000001
+Min (milliseconds) : 0.018388
+S19 is reading from its buffer "18.497799279774" and puts it in x
+S19 Buffer available, exit waiting.
+S19 READ : x = 18.497799279774
+S19 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 6.0194773333333345
+Min (milliseconds) : 0.001089333333333331
+S19 is reading from its buffer "23.7542914833511" and puts it in y
+S19 Buffer available, exit waiting.
+S19 READ : y = 23.7542914833511
+S19 DATA Creation:18.497799279774#23.7542914833511
+S19 GET TIME.
+S19 PRINTFILE [printfile, t, x, y]
+S19 Starts the loop section.
+S19 is waiting for data ...
+S21 is reading from its buffer "52.3494681931907" and puts it in x
+S21 Buffer available, exit waiting.
+S21 READ : x = 52.3494681931907
+S21 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 6.020566666666668
+Min (milliseconds) : 0.0010893333333333345
+S20 is reading from its buffer "77.99090485881369" and puts it in x
+S20 Buffer available, exit waiting.
+S20 READ : x = 77.99090485881369
+S20 is reading from its buffer "77.28241408202861" and puts it in y
+S20 Buffer available, exit waiting.
+S20 READ : y = 77.28241408202861
+S20 DATA Creation:77.99090485881369#77.28241408202861
+S20 GET TIME.
+S20 PRINTFILE [printfile, t, x, y]
+S20 Starts the loop section.
+S20 is waiting for data ...
+S21 is reading from its buffer "77.67137464342241" and puts it in y
+S21 Buffer available, exit waiting.
+S21 READ : y = 77.67137464342241
+S21 DATA Creation:52.3494681931907#77.67137464342241
+S21 GET TIME.
+S21 PRINTFILE [printfile, t, x, y]
+S21 Starts the loop section.
+S21 is waiting for data ...
+S4 is reading from its buffer "9.368183226500236" and puts it in x
+S4 Buffer available, exit waiting.
+S4 READ : x = 9.368183226500236
+S4 is reading from its buffer "24.04642899197905" and puts it in y
+S4 Buffer available, exit waiting.
+S4 READ : y = 24.04642899197905
+S4 DATA Creation:9.368183226500236#24.04642899197905
+S4 GET TIME.
+S4 PRINTFILE [printfile, t, x, y]
+S4 Starts the loop section.
+S4 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 6.021656000000002
+Min (milliseconds) : 0.0010893333333333345
+S22 is reading from its buffer "31.791841879648658" and puts it in x
+S22 Buffer available, exit waiting.
+S22 READ : x = 31.791841879648658
+S22 is reading from its buffer "25.746634084194085" and puts it in y
+S22 Buffer available, exit waiting.
+S22 READ : y = 25.746634084194085
+S22 DATA Creation:31.791841879648658#25.746634084194085
+S22 GET TIME.
+S22 PRINTFILE [printfile, t, x, y]
+S22 Starts the loop section.
+S22 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 7.000000000000002
+Min (milliseconds) : 0.9783439999999999
+S18 has finished the delay.
+S14 has finished the delay.
+S11 has finished the delay.
+S16 has finished the delay.
+S13 has finished the delay.
+S1 has finished the delay.
+S12 has finished the delay.
+S17 has finished the delay.
+S15 has finished the delay.
+S2 has finished the delay.
+
+S18 Starts the loop section.
+S18 READ SENSOR: S#29#20.98303197427886
+S18 Read DATA: S#29#20.98303197427886
+S18 is writing the message : "20.98303197427886" in its buffer.
+S14 Starts the loop section.
+S14 READ SENSOR: S#24#21.818769081521662
+S14 Read DATA: S#24#21.818769081521662
+S14 is writing the message : "21.818769081521662" in its buffer.
+S11 Starts the loop section.
+S11 READ SENSOR: S#26#75.25326819894764
+S11 Read DATA: S#26#75.25326819894764
+S11 is writing the message : "75.25326819894764" in its buffer.
+S16 Starts the loop section.
+S16 READ SENSOR: S#28#37.88030539247553
+S16 Read DATA: S#28#37.88030539247553
+S16 is writing the message : "37.88030539247553" in its buffer.
+S13 Starts the loop section.
+S13 READ SENSOR: S#23#17.928837511707172
+S13 Read DATA: S#23#17.928837511707172
+S13 is writing the message : "17.928837511707172" in its buffer.
+S1 Starts the loop section.
+S1 READ SENSOR: S#9#8.875797116084087
+S1 Read DATA: S#9#8.875797116084087
+S1 is writing the message : "8.875797116084087" in its buffer.
+S12 Starts the loop section.
+S12 READ SENSOR: S#25#81.6139144845128
+S12 Read DATA: S#25#81.6139144845128
+S12 is writing the message : "81.6139144845128" in its buffer.
+S17 Starts the loop section.
+S17 READ SENSOR: S#30#30.644467828377604
+S17 Read DATA: S#30#30.644467828377604
+S17 is writing the message : "30.644467828377604" in its buffer.
+S15 Starts the loop section.
+S15 READ SENSOR: S#27#66.41302547444798
+S15 Read DATA: S#27#66.41302547444798
+S15 is writing the message : "66.41302547444798" in its buffer.
+S2 Starts the loop section.
+S2 READ SENSOR: S#10#16.40602677181394
+S2 Read DATA: S#10#16.40602677181394
+S2 is writing the message : "16.40602677181394" in its buffer.
+A25 VALUE GENERATION
+A26 VALUE GENERATION
+A9 VALUE GENERATION
+A10 VALUE GENERATION
+A28 VALUE GENERATION
+A29 VALUE GENERATION
+A23 VALUE GENERATION
+A27 VALUE GENERATION
+A24 VALUE GENERATION
+A30 VALUE GENERATION
+
+----------------------------------------------------------------------------
+Time : 7.000000000000002
+Min (milliseconds) : 1.28E-19
+S12 is listening to the channel
+S12 the channel is free.
+S12 starts sending the message : "81.6139144845128".
+S12 has finished sending the message : "81.6139144845128" to the node: 
+S20 (radio: radio1) is receiving the message : "81.6139144845128" in its buffer.
+S12 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 7.000000000000002
+Min (milliseconds) : 8.000000000000001E-21
+S18 is listening to the channel
+S18 the channel is free.
+S18 starts sending the message : "20.98303197427886".
+S18 has finished sending the message : "20.98303197427886" to the node: 
+S22 (radio: radio1) is receiving the message : "20.98303197427886" in its buffer.
+S18 starts delaying for 1000.0 milliseconds
+S11 is listening to the channel
+S11 the channel is free.
+S11 starts sending the message : "75.25326819894764".
+S11 has finished sending the message : "75.25326819894764" to the node: 
+S20 (radio: radio1) is receiving the message : "75.25326819894764" in its buffer.
+S11 starts delaying for 1000.0 milliseconds
+S16 is listening to the channel
+S16 the channel is free.
+S16 starts sending the message : "37.88030539247553".
+S16 has finished sending the message : "37.88030539247553" to the node: 
+S21 (radio: radio1) is receiving the message : "37.88030539247553" in its buffer.
+S16 starts delaying for 1000.0 milliseconds
+S1 is listening to the channel
+S1 the channel is free.
+S1 starts sending the message : "8.875797116084087".
+S1 has finished sending the message : "8.875797116084087" to the node: 
+S4 (radio: radio1) is receiving the message : "8.875797116084087" in its buffer.
+S1 starts delaying for 1000.0 milliseconds
+S15 is listening to the channel
+S15 the channel is free.
+S15 starts sending the message : "66.41302547444798".
+S15 has finished sending the message : "66.41302547444798" to the node: 
+S21 (radio: radio1) is receiving the message : "66.41302547444798" in its buffer.
+S15 starts delaying for 1000.0 milliseconds
+S2 is listening to the channel
+S2 the channel is free.
+S2 starts sending the message : "16.40602677181394".
+S2 has finished sending the message : "16.40602677181394" to the node: 
+S4 (radio: radio1) is receiving the message : "16.40602677181394" in its buffer.
+S2 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 7.000000000000002
+Min (milliseconds) : 8.000000000000001E-21
+S14 is listening to the channel
+S14 the channel is free.
+S14 starts sending the message : "21.818769081521662".
+S14 has finished sending the message : "21.818769081521662" to the node: 
+S19 (radio: radio1) is receiving the message : "21.818769081521662" in its buffer.
+S14 starts delaying for 1000.0 milliseconds
+S13 is listening to the channel
+S13 the channel is free.
+S13 starts sending the message : "17.928837511707172".
+S13 has finished sending the message : "17.928837511707172" to the node: 
+S19 (radio: radio1) is receiving the message : "17.928837511707172" in its buffer.
+S13 starts delaying for 1000.0 milliseconds
+S17 is listening to the channel
+S17 the channel is free.
+S17 starts sending the message : "30.644467828377604".
+S17 has finished sending the message : "30.644467828377604" to the node: 
+S22 (radio: radio1) is receiving the message : "30.644467828377604" in its buffer.
+S17 starts delaying for 1000.0 milliseconds
+
+----------------------------------------------------------------------------
+Time : 7.019477333333335
+Min (milliseconds) : 0.019477333333333333
+S20 is reading from its buffer "81.6139144845128" and puts it in x
+S20 Buffer available, exit waiting.
+S20 READ : x = 81.6139144845128
+S20 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 7.020566666666669
+Min (milliseconds) : 0.0010893333333333345
+S20 is reading from its buffer "75.25326819894764" and puts it in y
+S20 Buffer available, exit waiting.
+S20 READ : y = 75.25326819894764
+S20 DATA Creation:81.6139144845128#75.25326819894764
+S20 GET TIME.
+S20 PRINTFILE [printfile, t, x, y]
+S20 Starts the loop section.
+S20 is waiting for data ...
+S21 is reading from its buffer "37.88030539247553" and puts it in x
+S21 Buffer available, exit waiting.
+S21 READ : x = 37.88030539247553
+S21 is reading from its buffer "66.41302547444798" and puts it in y
+S21 Buffer available, exit waiting.
+S21 READ : y = 66.41302547444798
+S21 DATA Creation:37.88030539247553#66.41302547444798
+S21 GET TIME.
+S21 PRINTFILE [printfile, t, x, y]
+S21 Starts the loop section.
+S21 is waiting for data ...
+S22 is reading from its buffer "20.98303197427886" and puts it in x
+S22 Buffer available, exit waiting.
+S22 READ : x = 20.98303197427886
+S22 is waiting for data ...
+S4 is reading from its buffer "8.875797116084087" and puts it in x
+S4 Buffer available, exit waiting.
+S4 READ : x = 8.875797116084087
+S4 is reading from its buffer "16.40602677181394" and puts it in y
+S4 Buffer available, exit waiting.
+S4 READ : y = 16.40602677181394
+S4 DATA Creation:8.875797116084087#16.40602677181394
+S4 GET TIME.
+S4 PRINTFILE [printfile, t, x, y]
+S4 Starts the loop section.
+S4 is waiting for data ...
+
+----------------------------------------------------------------------------
+Time : 7.021656000000003
+Min (milliseconds) : 0.0010893333333333345
+S19 is reading from its buffer "21.818769081521662" and puts it in x
+S19 Buffer available, exit waiting.
+S19 READ : x = 21.818769081521662
+S19 is reading from its buffer "17.928837511707172" and puts it in y
+S19 Buffer available, exit waiting.
+S19 READ : y = 17.928837511707172
+S19 DATA Creation:21.818769081521662#17.928837511707172
+S19 GET TIME.
+S19 PRINTFILE [printfile, t, x, y]
+S19 Starts the loop section.
+S19 is waiting for data ...
+S22 is reading from its buffer "30.644467828377604" and puts it in y
+S22 Buffer available, exit waiting.
+S22 READ : y = 30.644467828377604
+S22 DATA Creation:20.98303197427886#30.644467828377604
+S22 GET TIME.
+S22 PRINTFILE [printfile, t, x, y]
+S22 Starts the loop section.
+S22 is waiting for data ...
