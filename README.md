@@ -24,9 +24,9 @@
 
 ### Activating Services
 
-4. To activate all services, run:
+4. To activate all sensor services, run:
    ```
-   python run_services.py
+   python run_sensors.py
    ```
 
 ## Subscriptions
