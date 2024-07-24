@@ -57,5 +57,9 @@ def broadcast_notification():
     return jsonify({"status": "Broadcast complete", "results": results}), 200
 
 
-if __name__ == "__main__":
+def run():
     app.run(host="0.0.0.0", port=8010)
+
+
+if __name__ == "__main__":
+    run()

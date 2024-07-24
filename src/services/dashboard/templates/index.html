@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8">IoT Dashboard</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Environmental Quality</h2>
+                <div id="environmental-quality"></div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Energy Optimization</h2>
+                <div id="energy-optimization"></div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Crowd Management</h2>
+                <div id="crowd-management"></div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Anomaly Detection</h2>
+                <div id="anomaly-detection"></div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Predictive Maintenance</h2>
+                <div id="predictive-maintenance"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateDashboard() {
+            fetch('/api/dashboard_data')
+                .then(response => response.json())
+                .then(data => {
+                    updateEnvironmentalQuality(data.environmental_quality);
+                    updateEnergyOptimization(data.energy_optimization);
+                    updateCrowdManagement(data.crowd_management);
+                    updateAnomalyDetection(data.anomaly_detection);
+                    updatePredictiveMaintenance(data.predictive_maintenance);
+                });
+        }
+
+        function updateEnvironmentalQuality(data) {
+            const element = document.getElementById('environmental-quality');
+            if (data.error) {
+                element.textContent = 'Service unavailable';
+            } else {
+                element.textContent = `EQ Index: ${data.environmental_quality_index.toFixed(2)}`;
+            }
+        }
+
+        function updateEnergyOptimization(data) {
+            const element = document.getElementById('energy-optimization');
+            if (data.error) {
+                element.textContent = 'Service unavailable';
+            } else {
+                element.textContent = `Energy Surplus: ${data.energy_surplus.toFixed(2)}`;
+            }
+        }
+
+        function updateCrowdManagement(data) {
+            const element = document.getElementById('crowd-management');
+            if (data.error) {
+                element.textContent = 'Service unavailable';
+            } else {
+                element.textContent = `Occupancy: ${data.occupancy_percentage.toFixed(2)}%`;
+            }
+        }
+
+        function updateAnomalyDetection(data) {
+            const element = document.getElementById('anomaly-detection');
+            if (data.error) {
+                element.textContent = 'Service unavailable';
+            } else {
+                const anomalyCount = Object.values(data.anomalies).flat().length;
+                element.textContent = `Anomalies detected: ${anomalyCount}`;
+            }
+        }
+
+        function updatePredictiveMaintenance(data) {
+            const element = document.getElementById('predictive-maintenance');
+            if (data.error) {
+                element.textContent = 'Service unavailable';
+            } else {
+                element.textContent = `Prediction: ${data.prediction}`;
+            }
+        }
+
+        // Update dashboard every 30 seconds
+        updateDashboard();
+        setInterval(updateDashboard, 30000);
+    </script>
+</body>
+</html>

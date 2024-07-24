@@ -59,5 +59,9 @@ def detect_anomalies():
     return jsonify({"anomalies": anomalies})
 
 
-if __name__ == "__main__":
+def run():
     app.run(host="0.0.0.0", port=8009)
+
+
+if __name__ == "__main__":
+    run()

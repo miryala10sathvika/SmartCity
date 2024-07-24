@@ -43,5 +43,9 @@ def get_energy_optimization():
         return jsonify({"error": "Unable to fetch sensor data"}), 400
 
 
-if __name__ == "__main__":
+def run():
     app.run(host="0.0.0.0", port=8007)
+
+
+if __name__ == "__main__":
+    run()

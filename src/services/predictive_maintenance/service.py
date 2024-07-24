@@ -81,5 +81,9 @@ def predict_maintenance():
     )
 
 
-if __name__ == "__main__":
+def run():
     app.run(host="0.0.0.0", port=8011)
+
+
+if __name__ == "__main__":
+    run()
