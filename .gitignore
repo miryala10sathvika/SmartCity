@@ -6,3 +6,4 @@ src/cupcarbon/results/*
 !src/cupcarbon/results/.gitkeep
 src/cupcarbon/logs/*
 venv
+*.log
