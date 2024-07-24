@@ -4,5 +4,5 @@ __pycache__
 *data.db
 src/cupcarbon/results/*
 !src/cupcarbon/results/.gitkeep
-src/cupcarbon/logs/log.txt
+src/cupcarbon/logs/*
 venv

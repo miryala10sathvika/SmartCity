@@ -3,7 +3,7 @@ import statistics
 import time
 from colorama import Fore, Style, init
 
-RESULTS_PATH = "../cupcarbon/results/"
+RESULTS_PATH = "../../cupcarbon/results/"
 AIR_SINK = "SINK_19.txt"
 
 # Global variables to maintain state between function calls

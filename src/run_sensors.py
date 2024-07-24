@@ -10,11 +10,11 @@ def run_script(script_name):
 
 def main():
     services = [
-        "services/air_sensor_service.py",
-        "services/water_sensor_service.py",
-        "services/solar_sensor_service.py",
-        "services/crowd_sensor_service.py",
-        "services/room_sensor_service.py",
+        "services/sensors/air/service.py",
+        "services/sensors/water/service.py",
+        "services/sensors/solar/service.py",
+        "services/sensors/crowd/service.py",
+        "services/sensors/room/service.py",
     ]
 
     processes = []
@@ -27,9 +27,9 @@ def main():
         time.sleep(2)
 
     # Start the main server
-    main_server = run_script("services/main_server.py")
+    main_server = run_script("services/sensors/server.py")
     processes.append(main_server)
-    print("Started main_server.py")
+    print("Started main_server/service.py")
 
     try:
         # Keep the script running
