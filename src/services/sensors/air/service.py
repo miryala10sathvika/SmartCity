@@ -167,6 +167,10 @@ def log_cpu_utilization():
             )  # Subtract the interval time used by psutil.cpu_percent
 
 
-if __name__ == "__main__":
+def run():
     threading.Thread(target=log_cpu_utilization, daemon=True).start()
     app.run(host="0.0.0.0", port=8001)
+
+
+if __name__ == "__main__":
+    run()

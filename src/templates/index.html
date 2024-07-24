@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Service Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1f2937; /* Dark background */
+            color: #f9fafb; /* Light text */
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #4b5563; /* Dark gray */
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #10b981; /* Green */
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .switch:hover .slider {
+            background-color: #374151; /* Slightly lighter gray */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-8 text-center">IoT Service Manager</h1>
+        
+        <div id="services-container" class="overflow-x-auto">
+            <!-- Services will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+        function createServiceElement(service, isRunning, path) {
+            const tr = document.createElement('tr');
+            tr.className = 'bg-gray-800';
+            tr.innerHTML = `
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">${service}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-right">
+                    <label class="switch">
+                        <input type="checkbox" ${isRunning ? 'checked' : ''} onchange="toggleService('${path}', this)">
+                        <span class="slider"></span>
+                    </label>
+                </td>
+            `;
+            return tr;
+        }
+
+        function createSensorGroup(sensors, status) {
+            const tr = document.createElement('tr');
+            tr.className = 'bg-gray-800';
+            tr.innerHTML = `
+                <td colspan="2" class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-semibold">Sensors</h2>
+                        <div>
+                            <button onclick="toggleAllSensors('start')" class="bg-green-500 text-white px-4 py-2 rounded mr-2 hover:bg-green-600">Start All</button>
+                            <button onclick="toggleAllSensors('stop')" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Stop All</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        ${sensors.map(sensor => `
+                            <div class="flex justify-between items-center mb-4">
+                                <span>${sensor}</span>
+                                <label class="switch">
+                                    <input type="checkbox" ${status[sensor] ? 'checked' : ''} onchange="toggleService('sensors/${sensor}', this)">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        `).join('')}
+                    </div>
+                </td>
+            `;
+            return tr;
+        }
+
+        function updateServices() {
+            fetch('/api/services')
+                .then(response => response.json())
+                .then(services => {
+                    const container = document.getElementById('services-container');
+                    container.innerHTML = `
+                        <table class="min-w-full bg-gray-900 rounded-lg shadow overflow-hidden">
+                            <thead class="bg-gray-700">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Service</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="services-tbody">
+                                <!-- Dynamic content -->
+                            </tbody>
+                        </table>
+                    `;
+                    const tbody = document.getElementById('services-tbody');
+                    for (const [service, status] of Object.entries(services)) {
+                        if (service === 'sensors') {
+                            tbody.appendChild(createSensorGroup(Object.keys(status), status));
+                        } else {
+                            tbody.appendChild(createServiceElement(service, status, service));
+                        }
+                    }
+                });
+        }
+
+        function toggleService(servicePath, checkbox) {
+            fetch(`/api/toggle/${servicePath}`, { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'started') {
+                        checkbox.checked = true;
+                    } else if (data.status === 'stopped') {
+                        checkbox.checked = false;
+                    } else {
+                        alert(`Error: ${data.message}`);
+                        checkbox.checked = !checkbox.checked;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    checkbox.checked = !checkbox.checked;
+                });
+        }
+
+        function toggleAllSensors(action) {
+            fetch('/api/toggle_all_sensors', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ action: action })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status.includes('error')) {
+                    alert(`Error: ${data.message}`);
+                }
+                updateServices();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Update services every 5 seconds
+        updateServices();
+        setInterval(updateServices, 5000);
+    </script>
+</body>
+</html>
